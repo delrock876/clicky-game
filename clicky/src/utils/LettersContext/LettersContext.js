@@ -1,4 +1,4 @@
-import React, {createContext} from 'React'
+import React, {createContext} from 'react'
 
 const LettersContext = createContext({
   letters: [],

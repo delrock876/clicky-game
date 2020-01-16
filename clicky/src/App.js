@@ -5,13 +5,26 @@ import LettersContext from './utils/LettersContext'
 const App =()=>{
 
   const [lettersState, setLettersState] = useState({
-    letters: []
+    letters: ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
   })
 
-  lettersState.handleScramble = ()=>{
+  lettersState.handleScramble = letters =>{
+      
+    for (let i = letters.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * i)
+      const temp = letters[i]
+      letters[i] = letters[j]
+      letters[j] = temp
+    }
+    setLettersState({...lettersState, letters})
+    console.log(letters)
+    return letters.length
 
   }
+
+
   return(
+
     <LettersContext.Provider value={lettersState}>
 
 <LettersDisplay/>
