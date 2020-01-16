@@ -18,10 +18,9 @@ const App =()=>{
     }
     setLettersState({...lettersState, letters})
     console.log(letters)
-    return letters.length
+    return letters
 
   }
-
 
   return(
 

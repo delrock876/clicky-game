@@ -11,11 +11,11 @@ const {letters, handleScramble}= useContext(LettersContext)
 
     {
       letters.map(letter=>(
-      <div style={{ backgroundColor: "yellow", height: "4em" }} className="card-panel col s2" name={letter} >{letter}</div>
+      <div 
+      style={{ backgroundColor: "yellow", height: "4em" }} className="card-panel col s2" name={letter} 
+          onClick={() => handleScramble(letters)}>{letter}</div>
       ))
     }
- 
-      <button onClick={()=>handleScramble(letters)}>Shuffle!</button>
 
     </div>
 
