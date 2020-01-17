@@ -3,6 +3,7 @@ import Score from './components/Score'
 import LettersDisplay from './components/LettersDisplay'
 import LettersContext from './utils/LettersContext'
 import shuffle from 'shuffle-array'
+import swal from 'sweetalert'
 
 const App = () => {
 
@@ -19,7 +20,11 @@ const App = () => {
 
     // console.log(name)
     if (clicked.includes(name)) {
-      console.log(`already exists, you lose!`)
+      swal({
+        text: "You already chose this letter",
+        title: `You lose!`,
+        icon: 'error',
+      })
       clicked = []
       score = 0
       setLettersState({ clicked, score })
