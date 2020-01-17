@@ -7,8 +7,8 @@ const LetterDisplay = _ => {
   const { letters, handleScramble } = useContext(LettersContext)
 
   return (
+    // { CREATES A CARD W/ SCRAMBLE FUNCTION FOR EACH LETTER IN LETTERS ARRAY }
     <div className="row">
-
       {
         letters.map(letter => (
           <div className= "col s3">
