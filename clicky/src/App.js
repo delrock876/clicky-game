@@ -21,7 +21,7 @@ const App = () => {
     // console.log(name)
     if (clicked.includes(name)) {
       swal({
-        text: "You already chose this letter",
+        text: `High Score: ${score}`,
         title: `You lose!`,
         icon: 'error',
       })
