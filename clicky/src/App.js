@@ -18,7 +18,6 @@ const App = () => {
     let clicked = JSON.parse(JSON.stringify(lettersState.clicked))
     let score = lettersState.score
 
-    // console.log(name)
     if (clicked.includes(name)) {
       swal({
         text: `High Score: ${score}`,
@@ -31,8 +30,6 @@ const App = () => {
     } else {
       clicked.push(name)
       score++
-      console.log(score)
-      console.log(clicked)
     }
     setLettersState({ ...lettersState, clicked, letters, score })
   }
