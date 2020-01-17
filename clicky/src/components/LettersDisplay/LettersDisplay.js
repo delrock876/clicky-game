@@ -1,21 +1,26 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import LettersContext from '../../utils/LettersContext'
 
 
-const LetterDisplay =_=>{
+const LetterDisplay = _ => {
 
-const {letters, handleScramble}= useContext(LettersContext)
+  const { letters, handleScramble, handleToggle } = useContext(LettersContext)
 
-  return(
-    <div>
+  return (
+    <div className= "row">
 
-    {
-      letters.map(letter=>(
-      <div 
-      style={{ backgroundColor: "yellow", height: "4em" }} className="card-panel col s2" name={letter} 
-          onClick={() => handleScramble(letters)}>{letter}</div>
-      ))
-    }
+      {
+        letters.map(letter => (
+          <div>
+            <div
+            className="card col s4" data-name={letter} id="letter"
+            onClick={handleToggle}>{letter}
+            </div>
+            
+            </div>
+        ))
+
+      }
 
     </div>
 

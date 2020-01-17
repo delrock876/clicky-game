@@ -1,7 +1,9 @@
-import React, {createContext} from 'react'
+import {createContext} from 'react'
 
 const LettersContext = createContext({
   letters: [],
-  handleScramble:()=>{ }
+  clicked:[],
+  handleScramble:()=>{ },
+  handleToggle: ()=>{ }
 })
 export default LettersContext

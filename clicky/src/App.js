@@ -1,32 +1,27 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import LettersDisplay from './components/LettersDisplay'
 import LettersContext from './utils/LettersContext'
-
-const App =()=>{
+import shuffle from 'shuffle-array'
+console.log(shuffle([1, 2, 3, 4, 5]))
+const App = () => {
 
   const [lettersState, setLettersState] = useState({
-    letters: ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
+    letters: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"],
+    clicked: []
   })
 
-  lettersState.handleScramble = letters =>{
-      
-    for (let i = letters.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * i)
-      const temp = letters[i]
-      letters[i] = letters[j]
-      letters[j] = temp
-    }
-    setLettersState({...lettersState, letters})
-    console.log(letters)
-    return letters
-
+  lettersState.handleToggle = ({ target: { dataset: { name } } }) => {
+    console.log(name)
+    let letters = shuffle(JSON.parse(JSON.stringify(lettersState.letters)))
+    setLettersState({ ...lettersState, letters })
   }
 
-  return(
+
+  return (
 
     <LettersContext.Provider value={lettersState}>
 
-<LettersDisplay/>
+      <LettersDisplay />
 
     </LettersContext.Provider>
 
