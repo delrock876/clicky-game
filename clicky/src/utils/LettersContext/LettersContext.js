@@ -4,6 +4,6 @@ const LettersContext = createContext({
   letters: [],
   clicked:[],
   handleScramble:()=>{ },
-  handleToggle: ()=>{ }
+  handleLose: ()=>{ }
 })
 export default LettersContext

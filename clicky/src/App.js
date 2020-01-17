@@ -9,13 +9,22 @@ const App = () => {
     letters: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"],
     clicked: []
   })
-
-  lettersState.handleToggle = ({ target: { dataset: { name } } }) => {
-    console.log(name)
+  
+  lettersState.handleScramble = ({ target: { dataset: { name } } }) => {
     let letters = shuffle(JSON.parse(JSON.stringify(lettersState.letters)))
-    setLettersState({ ...lettersState, letters })
-  }
+    let clicked = JSON.parse(JSON.stringify(lettersState.clicked))
+    console.log(name)
+    if (clicked.includes(name)) {
+      console.log(`already exists, you lose!`)
+      clicked = []
+      setLettersState({clicked})
+    } else {
+      clicked.push(name)
+      console.log(clicked)
+    }
+    setLettersState({ ...lettersState, clicked, letters })
 
+  }
 
   return (
 
