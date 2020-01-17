@@ -4,7 +4,8 @@ const LettersContext = createContext({
   letters: [],
   clicked:[],
   score: 0,
+  modalIsOpen:false,
   handleScramble:()=>{ },
-  handleLose: ()=>{ }
+  openModal: ()=>{ }
 })
 export default LettersContext

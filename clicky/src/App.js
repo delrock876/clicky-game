@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Score from './components/Score'
 import LettersDisplay from './components/LettersDisplay'
 import LettersContext from './utils/LettersContext'
 import shuffle from 'shuffle-array'
@@ -10,17 +11,18 @@ const App = () => {
     clicked: [],
     score: 0
   })
-  
+
   lettersState.handleScramble = ({ target: { dataset: { name } } }) => {
     let letters = shuffle(JSON.parse(JSON.stringify(lettersState.letters)))
     let clicked = JSON.parse(JSON.stringify(lettersState.clicked))
     let score = lettersState.score
-  
-    console.log(name)
+
+    // console.log(name)
     if (clicked.includes(name)) {
       console.log(`already exists, you lose!`)
       clicked = []
-      setLettersState({clicked})
+      score = 0
+      setLettersState({ clicked, score })
     } else {
       clicked.push(name)
       score++
@@ -33,7 +35,8 @@ const App = () => {
   return (
 
     <LettersContext.Provider value={lettersState}>
-      <Score/>
+
+      <Score />
       <LettersDisplay />
 
     </LettersContext.Provider>
