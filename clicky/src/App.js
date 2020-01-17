@@ -13,24 +13,31 @@ const App = () => {
     score: 0
   })
 
+  //SHUFFLE LETTERS ARRAY AND BRINGS IN CLICKED ARRAY 
   lettersState.handleScramble = ({ target: { dataset: { name } } }) => {
     let letters = shuffle(JSON.parse(JSON.stringify(lettersState.letters)))
     let clicked = JSON.parse(JSON.stringify(lettersState.clicked))
     let score = lettersState.score
 
+    //RESET IF LOSE
     if (clicked.includes(name)) {
+      // --modal/alert--
       swal({
         text: `High Score: ${score}`,
         title: `You lose!`,
         icon: 'error',
       })
+      //  --end alert--
       clicked = []
       score = 0
       setLettersState({ clicked, score })
+
+      //CONTINUE GAME, ADDS CLICKED LETTER TO NEW ARRAY
     } else {
       clicked.push(name)
       score++
     }
+    //UPDATES NEW VALUES 
     setLettersState({ ...lettersState, clicked, letters, score })
   }
 
