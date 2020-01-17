@@ -33,7 +33,7 @@ const App = () => {
   return (
 
     <LettersContext.Provider value={lettersState}>
-
+      <Score/>
       <LettersDisplay />
 
     </LettersContext.Provider>
