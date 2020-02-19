@@ -2,7 +2,7 @@
 
 A simple memory game where you must not click the same letter more than once until you've clicked all the letters.
 
-<img src="/assets/clicky.PNG" height="300" width="200"><img src="/assets/clicky1.PNG" height="300" width="200">
+<img src="/assets/clicky.PNG" height="300" width="400"><img src="/assets/clicky1.PNG" height="300" width="300">
 
 ## Available Scripts
 
