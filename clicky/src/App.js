@@ -32,8 +32,20 @@ const App = () => {
       score = 0
       setLettersState({ clicked, score })
 
-      //CONTINUE GAME, ADDS CLICKED LETTER TO NEW ARRAY
-    } else {
+      //IF ALL CLICKED CORRECTLY, YOU WIN
+    } else if(score === 12){
+      clicked = []
+      score = 0
+      setLettersState({clicked, score})
+      swal({
+        text: `Nice work`,
+        title: `You win!`,
+        icon: 'success',
+      })
+    }
+    //CONTINUE GAME, ADDS CLICKED LETTER TO ARRAY
+    else
+    {
       clicked.push(name)
       score++
     }
