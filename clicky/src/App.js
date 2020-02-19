@@ -45,11 +45,10 @@ const App = () => {
       setLettersState({clicked, score})
     }
     //CONTINUE GAME, ADDS CLICKED LETTER TO NEW ARRAY
-    else
-    {
+    
       clicked.push(name)
       score++
-    }
+    console.log(score)
     //UPDATES NEW VALUES 
     setLettersState({ ...lettersState, clicked, letters, score })
   }
